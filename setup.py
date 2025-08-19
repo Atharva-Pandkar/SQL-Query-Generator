@@ -1,0 +1,21 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="bike_share_analytics",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=[
+        "flask>=3.1.1",
+        "flask-sqlalchemy>=3.1.1",
+        "gunicorn>=23.0.0",
+        "openai>=1.100.0",
+        "psycopg2-binary>=2.9.10",
+        "pytest>=8.4.1",
+        "requests>=2.32.5",
+        "spacy>=3.8.7",
+        "werkzeug>=3.1.3",
+        "email-validator>=2.2.0",
+        "python-dotenv>=1.1.1",
+    ],
+    python_requires=">=3.11",
+)

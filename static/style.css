@@ -1,0 +1,370 @@
+/* Custom styles for Bike Share Analytics Assistant */
+
+:root {
+    /* Enhanced color palette */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --card-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+    
+    /* Accent colors */
+    --primary-purple: #667eea;
+    --primary-blue: #4facfe;
+    --accent-pink: #f093fb;
+    --accent-coral: #f5576c;
+    --success-cyan: #00f2fe;
+    --dark-navy: #1a1a2e;
+    --medium-gray: #16213e;
+    --light-gray: #2a3f66;
+}
+
+/* Body and background improvements */
+body {
+    background: var(--dark-gradient);
+    min-height: 100vh;
+}
+
+/* Enhanced navigation */
+.navbar {
+    background: var(--primary-gradient) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: white !important;
+}
+
+/* Chat messages with improved styling */
+.chat-messages {
+    max-height: 60vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced example query cards */
+.example-query {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-gradient) !important;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.example-query:hover {
+    background: var(--success-gradient) !important;
+    border-color: var(--primary-blue);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Ensure chat container takes full height */
+.h-100 {
+    height: 100vh !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+/* Enhanced message styling with better readability */
+.message {
+    animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 1.5rem;
+}
+
+.message .card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-gradient);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+.message.user .card {
+    background: var(--primary-gradient);
+    margin-left: 2rem;
+    color: white;
+}
+
+.message.assistant .card {
+    background: rgba(26, 26, 46, 0.95);
+    margin-right: 2rem;
+    color: white;
+}
+
+/* Ensure all text in message cards is readable */
+.message .card-body,
+.message .card-text,
+.message p,
+.message h1, .message h2, .message h3, .message h4, .message h5, .message h6 {
+    color: white !important;
+}
+
+/* Special styling for result displays */
+.result-display {
+    background: rgba(79, 172, 254, 0.15);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    color: #ffffff !important;
+}
+
+.error-display {
+    background: rgba(245, 87, 108, 0.15);
+    border: 1px solid rgba(245, 87, 108, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Enhanced loading and UI elements */
+.spinner-border {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 3px;
+    border-color: var(--primary-blue);
+    border-right-color: transparent;
+}
+
+/* Enhanced buttons */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--success-gradient);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+}
+
+/* Enhanced input styling */
+.form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+    color: white;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group-text {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Status indicator */
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-cyan);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 242, 254, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+    }
+}
+
+/* Code block styling */
+pre code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: var(--bs-light);
+}
+
+/* Enhanced table styling */
+.table-responsive {
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table th {
+    position: sticky;
+    top: 0;
+    background: var(--primary-gradient);
+    z-index: 10;
+    border: none;
+    font-weight: 600;
+    color: white;
+}
+
+.table td {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.table tbody tr:hover {
+    background: rgba(79, 172, 254, 0.1);
+}
+
+/* Enhanced alert styling with better readability */
+.alert {
+    border: none;
+    border-left: 4px solid;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    color: white !important;
+    font-weight: 500;
+}
+
+.alert-success {
+    border-left-color: var(--success-cyan);
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.25) 0%, rgba(0, 242, 254, 0.2) 100%);
+    color: #ffffff !important;
+}
+
+.alert-info {
+    border-left-color: var(--primary-blue);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.2) 100%);
+    color: #ffffff !important;
+}
+
+.alert-warning {
+    border-left-color: var(--accent-coral);
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.25) 0%, rgba(245, 87, 108, 0.2) 100%);
+    color: #ffffff !important;
+}
+
+.alert-danger {
+    border-left-color: var(--accent-coral);
+    background: linear-gradient(135deg, rgba(245, 87, 108, 0.3) 0%, rgba(240, 147, 251, 0.25) 100%);
+    color: #ffffff !important;
+}
+
+/* Details/Summary styling */
+details summary {
+    list-style: none;
+    padding: 0.5rem;
+    background-color: rgba(var(--bs-secondary-rgb), 0.3);
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+details[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .example-query {
+        margin-bottom: 1rem;
+    }
+    
+    .chat-messages {
+        max-height: 50vh;
+    }
+    
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+}
+
+/* Enhanced scrollbar styling */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--success-gradient);
+}
+
+/* Enhanced modal styling */
+.modal-content {
+    background: var(--card-gradient) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+}
+
+/* Card enhancements */
+.card {
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-gradient);
+    backdrop-filter: blur(10px);
+}
+
+.card-title {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* Glow effects */
+.glow {
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.3);
+}
+
+/* Icon enhancements */
+[data-feather] {
+    filter: drop-shadow(0 2px 4px rgba(79, 172, 254, 0.3));
+}
